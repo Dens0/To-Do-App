@@ -26,16 +26,20 @@ export default class AddTask extends Component {
     }
 
     handleClick = () => {
-const {text,date,checked} = this.state
+
         console.log("dodaj")
-        const add = this.props.add(text,date,checked)
-        if (add){
-            this.setState({
-                text: "",
-                checked: false,
-                date: this.minDate
-            })
-        }
+
+        const {text, date, checked} = this.state
+        if (text.length > 3) {
+            const add = this.props.add(text, date, checked)
+            if (add) {
+                this.setState({
+                    text: "",
+                    checked: false,
+                    date: this.minDate
+                })
+            }
+        }else alert("podaj minimum 3 znaki")
     }
 
 
