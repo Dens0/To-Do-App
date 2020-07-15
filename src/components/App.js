@@ -5,7 +5,7 @@ import TaskList from "./TaskList";
 
 
 class App extends Component {
-    counter = 9
+    counter = 10
 
 
     state = {
@@ -74,7 +74,7 @@ class App extends Component {
         console.log(task,this.counter)
         this.setState(prevState=>({
 
-            task:[...prevState.tasks,task]
+            tasks:[...prevState.tasks,task]
 
 
         }))
