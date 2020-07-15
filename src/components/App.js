@@ -10,18 +10,18 @@ class App extends Component {
 
     state = {
         tasks: [
-            {id: 1, text: 'zageać w Wiedźmina 3', date: '2018-02-15', important: true, active: true, finishDate: null},
-            {id: 2, text: 'polowanie', date: '2018-02-15', important: false, active: true, finishDate: null},
-            {id: 3, text: 'kodowanie', date: '2018-01-11', important: false, active: true, finishDate: null},
+            {id: 1, text: 'odwiedzić babcie', date: '2018-02-15', important: true, active: true, finishDate: null},
+            {id: 2, text: 'polowanie', date: '2020-02-15', important: false, active: true, finishDate: null},
+            {id: 3, text: 'kodowanie', date: '2020-01-11', important: false, active: true, finishDate: null},
             {id: 4, text: 'matura', date: '2018-02-15', important: true, active: true, finishDate: null},
             {id: 5, text: 'egzamin', date: '2018-06-15', important: false, active: true, finishDate: null},
             {id: 6, text: 'mecz piłki nożnej', date: '2018-02-15', important: true, active: true, finishDate: null},
             {id: 7, text: 'wyjazd do Warszawy', date: '2020-02-15', important: false, active: true, finishDate: null},
-            {id: 8, text: 'kupic samochód', date: '2018-03-15', important: false, active: true, finishDate: null},
+            {id: 8, text: 'kupić samochód', date: '2018-03-15', important: false, active: true, finishDate: null},
             {
                 id: 9,
                 text: 'nauka gry na fortepianie',
-                date: '2018-02-15',
+                date: '2020-02-15',
                 important: true,
                 active: true,
                 finishDate: null
