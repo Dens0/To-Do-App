@@ -18,13 +18,14 @@ const Task = (props) => {
             </div>
         )
     } else {
+        const finish = new Date(finishDate).toLocaleString()
         return (
             <div>
                 <p>
                     <strong >{text}</strong> - do <span><em>zrobić do {date}</em></span>
                     {/*<button onClick={() => props.done(id)}>Zostało zrobione</button>*/}
                     <button onClick={() => props.delete(id)}>X</button> <br/>
-                    potwiwerdzenie wykoniania <span>{finishDate}</span>
+                    potwiwerdzenie wykoniania <span> {finish}</span>
 
                 </p>
             </div>

@@ -5,6 +5,9 @@ import TaskList from "./TaskList";
 
 
 class App extends Component {
+    counter = 9
+
+
     state = {
         tasks: [
             {id: 1, text: 'zageać w Wiedźmina 3', date: '2018-02-15', important: true, active: true, finishDate: null},
@@ -27,35 +30,55 @@ class App extends Component {
 
 
     }
+
+
     deleteTask = (id) => {
         // const tasks = [...this.state.tasks]
         // const index = tasks.findIndex(task => task.id === id)
         // tasks.splice(index, 1)
 
         let tasks = [...this.state.tasks]
-        tasks = tasks.filter(task=>task.id !==id)
+        tasks = tasks.filter(task => task.id !== id)
         this.setState({
             tasks
         })
-
 
 
     }
 
 
     changeTaskStatus = (id) => {
-        console.log("Done " + id)
+        // console.log("Done " + id)
         const tasks = Array.from(this.state.tasks)
-        tasks.forEach(task=>{
-            if (task.id === id)
-            {
+        tasks.forEach(task => {
+            if (task.id === id) {
                 task.active = false
-                 task.finishDate = new Date().getTime()
+                task.finishDate = new Date().getTime()
             }
         })
-this.setState({
-    tasks
-})
+        this.setState({
+            tasks
+        })
+    }
+    addTask = (text,date,important) => {
+        console.log("obiekt dodany")
+        const task = {
+            id: this.counter,
+            text, //text z inputa
+            date,//text z inputa
+            important,//text z inputa
+            active: true,
+            finishDate: null
+        }
+        this.counter++
+        console.log(task,this.counter)
+        this.setState(prevState=>({
+
+            task:[...prevState.tasks,task]
+
+
+        }))
+        return true
     }
 
     render() {
@@ -64,8 +87,8 @@ this.setState({
         return (
 
             <div className="App">
-                HELLO WORLD
-                <AddTask/>
+                <h1>To do APP</h1>
+                <AddTask add={this.addTask}/>
                 <TaskList tasks={this.state.tasks} delete={this.deleteTask} done={this.changeTaskStatus}/>
             </div>
         )
